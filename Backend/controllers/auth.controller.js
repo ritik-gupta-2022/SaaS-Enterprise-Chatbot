@@ -27,6 +27,9 @@ export const signup = async (req, res, next) => {
     });
     // console.log(newUser);
     await newUser.save();
+    
+    console.log(newUser);
+
     const token = jwt.sign(
       { id: newUser._id, isAdmin: newUser.isAdmin },
       process.env.JWT_SECRET_KEY
@@ -44,7 +47,7 @@ export const signup = async (req, res, next) => {
         path: "/",
         maxAge: 24 * 60 * 60 * 1000,
       })
-      .json({ message: "Signup successful", user: newUser });
+      .json({ message: "Signup successful", user: rest });
   } catch (error) {
     // console.log(error);
     next(error);
