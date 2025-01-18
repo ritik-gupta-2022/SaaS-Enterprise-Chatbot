@@ -1,8 +1,10 @@
-import React from 'react'
 
+import HyperText from "../ui/hyper-text";
 const Home = () => {
   return (
-    <div>Home</div>
+
+    <HyperText>Hover Me!</HyperText>
+    
   )
 }
 

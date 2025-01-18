@@ -4,7 +4,7 @@ import SignUp from './pages/SignUp.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './App.css'
+
 import OnlyUserPrivateRoute from './components/shared/OnlyUserPrivateRoute.jsx';
 import Home from './components/shared/Home.jsx';
 
@@ -23,9 +23,7 @@ function App() {
             <Route path='/dashboard' element={<Dashboard/>} />
           </Route>
 
-          <Route path='' element={<OnlyUserPrivateRoute/>}>
-            <Route path='/admin-dashboard' element={<Dashboard/>} />
-          </Route>
+          
         </Routes>
       </BrowserRouter>
       <ToastContainer />
