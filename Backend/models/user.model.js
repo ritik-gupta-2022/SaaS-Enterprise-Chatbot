@@ -18,16 +18,12 @@ const userSchema = new mongoose.Schema(
       required: true,
       select: false,
     },
-    // avatar:{
-    //     public_id:{
-    //         type:String,
-    //         required:true
-    //     },
-    //     url:{
-    //         type:String,
-    //         required:true
-    //     }
-    // },
+    businesses: [
+      { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Business" 
+      }
+    ],
     createdAt: {
       type: Date,
       default: Date.now,

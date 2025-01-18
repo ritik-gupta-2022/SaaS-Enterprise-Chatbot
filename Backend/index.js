@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';  // package for extracting cokie from browser
 import authRoutes from './routes/auth.routes.js';
+import businessRoutes from './routes/business.route.js'
 // This line loads environment variables from the .env file into process.env
 dotenv.config()
 
@@ -31,6 +32,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
+app.use("/api/business", businessRoutes);
+
 
 app.get('/',(req,res)=>{
     res.send('hello world');
