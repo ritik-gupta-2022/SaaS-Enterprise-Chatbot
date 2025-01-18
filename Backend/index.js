@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';  // package for extracting cokie from browser
-
+import authRoutes from './routes/auth.routes.js';
 // This line loads environment variables from the .env file into process.env
 dotenv.config()
 
@@ -30,6 +30,7 @@ app.options('*', cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+app.use("/api/auth", authRoutes);
 
 app.get('/',(req,res)=>{
     res.send('hello world');
